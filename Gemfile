@@ -6,6 +6,7 @@ git_source(:github) do |repo_name|
 end
 
 gem 'config'
+gem 'phonelib'
 gem 'redis', '3.3.0'
 gem 'rails', '~> 5.1.1'
 gem 'sidekiq'
