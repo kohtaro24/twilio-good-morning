@@ -4,7 +4,7 @@ module TwilioWrapper::TwimlBuilder
     def twiml
       Twilio::TwiML::VoiceResponse.new do |r|
         r.dial do |d|
-          d.conference 'hoge', startConferenceOnEnter: true, endConferenceOnExit: false
+          d.conference 'hoge', startConferenceOnEnter: true, endConferenceOnExit: true
         end
       end.to_xml
     end
