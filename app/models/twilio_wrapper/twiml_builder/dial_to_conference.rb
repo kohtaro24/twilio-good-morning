@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 module TwilioWrapper::TwimlBuilder
-  class DialToConference
+  class DialToConference < Base
     def twiml
       Twilio::TwiML::VoiceResponse.new do |r|
         r.dial do |d|
