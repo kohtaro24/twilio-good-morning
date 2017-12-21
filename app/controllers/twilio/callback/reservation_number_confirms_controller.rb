@@ -2,7 +2,7 @@
 module Twilio::Callback
   class ReservationNumberConfirmsController < ApplicationController
     def create
-        if %w(へい はい あい うん).any? { |word| params[:SpeechResult].tr('ァ-ン', 'ぁ-ん').include?(word) }
+        if Settings.twilio.speech_hints.accept.any? { |word| params[:SpeechResult].tr('ァ-ン', 'ぁ-ん').include?(word) }
           reserve(params[:reservation].in_time_zone, [params[:Caller], params[:number]])
           render xml: TwilioWrapper::TwimlBuilder::ReservationThanks.new.twiml
         else

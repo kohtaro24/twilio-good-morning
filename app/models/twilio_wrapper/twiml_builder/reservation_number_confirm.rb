@@ -11,7 +11,7 @@ module TwilioWrapper::TwimlBuilder
     def twiml
       Twilio::TwiML::VoiceResponse.new do |r|
         r.gather(input: 'speech', timeout: 3, language: 'ja-JP', action: twilio_callback_reservation_number_confirm_url(reservation: reservation, number: number)) do |g|
-          g.say("#{number}でよろしいですか？", language: 'ja-JP')
+          g.say("#{number.chars.join(',')}でよろしいですか？", language: 'ja-JP', hints: Settings.twilio.speech_hints.accept.join(','))
         end
       end.to_xml
     end

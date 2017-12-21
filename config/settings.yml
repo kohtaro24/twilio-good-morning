@@ -1,0 +1,9 @@
+twilio:
+  speech_hints:
+    accept:
+      - へい
+      - はい
+      - あい
+      - うん
+      - OK
+      - おっけー
