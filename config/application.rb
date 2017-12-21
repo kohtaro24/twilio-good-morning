@@ -16,7 +16,7 @@ require "sprockets/railtie"
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
-module RandomPhone
+module TwilioGoodMorning
   class Application < Rails::Application
     config.load_defaults 5.1
     config.generators.system_tests = nil
